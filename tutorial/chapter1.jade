@@ -1,6 +1,6 @@
 .step(data-title='Introduction')
   :markdown
-    ### User Account Verification
+    ## User Account Verification
 
     Ready to implement user account verification in your application? Here's how it works at a high level:
 
@@ -12,7 +12,7 @@
 
     1. The user sees a success page and receives an SMS indicating that their account has been created
 
-    ### Building Blocks
+    ## Building Blocks
 
     To get this done, you'll be working with the following Twilio-powered APIs:
 
@@ -29,7 +29,7 @@
 
 .step(data-title="About This Tutorial")
   :markdown
-    ### About This Tutorial
+    ## About This Tutorial
 
     In this tutorial, we will be working through a series of [user stories](http://en.wikipedia.org/wiki/User_story) that describe how to fully implement account verification in a web application. Our team implemented this example application in about 12 story points (roughly equivalent to 12 working hours).
 
@@ -38,7 +38,7 @@
 
 .step(data-title='The User Story')
   :markdown
-    ### The User Story
+    ## The User Story
 
     <blockquote>As a user, I want to register for a new user account with my e-mail, full name, mobile phone number, and a password.</blockquote>
 
@@ -54,7 +54,7 @@
 
 .step(data-title='User Model', data-file='app/models/user.rb')
   :markdown
-    ### The User Model
+    ## The User Model
 
     The User Model for this use-case is pretty straight-forward and Rails offers us some tools to make it even simpler. If you have already read through the [2FA tutorial](/docs/howto/walkthrough/two-factor-authentication) this probably looks very similar. Let's start by defining our model and validating it.
 
@@ -74,7 +74,7 @@
 
 .step(data-title='Adding Routes', data-file='config/routes.rb')
   :markdown
-    ### Adding New Routes
+    ## Adding New Routes
 
     In a [Rails](http://rubyonrails.org/) application, there is something called [Resource Routing](http://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default) which automatically maps a resources CRUD capabilities to it's controller. Since our User is an ActiveRecord resource, we can tell Rails that we want to use some of these routes, which will save us some lines of code.
 
@@ -82,7 +82,7 @@
 
 .step(data-title='New User Form', data-file='app/views/users/new.html.erb', data-language='html')
   :markdown
-    ### New User Form
+    ## New User Form
 
     When we create a new user, we ask for a name, e-mail address, and a password. In order to validate their account, we also ask them for a mobile number with a country code, which we can use with Authy to send them one-time passwords via SMS.
 
@@ -92,7 +92,7 @@
     
 .step(data-title='Handling the Form POST', data-file='app/controllers/users_controller.rb', data-highlight='10-23')
   :markdown
-    ### Handling the Form POST
+    ## Handling the Form POST
 
     One of the other handy controllers created by our `User` resource route was 'user/create' which handles the POST from our form.
 

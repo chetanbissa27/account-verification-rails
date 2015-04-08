@@ -1,6 +1,6 @@
 .step(data-title='Verify the One-Time Password', data-file="app/views/users/show_verify.html.erb", data-language='html')
   :markdown
-    ### User Story: Verify the One-Time Password
+    ## User Story: Verify the One-Time Password
 
     <blockquote>As a user, I want to enter the one-time password sent to my mobile phone from the authentication system before I complete the signup process.</blockquote>
 
@@ -13,13 +13,13 @@
 
 .step(data-title="The Verification Form", data-file="app/views/users/show_verify.html.erb", data-highlight="7-13", data-language='html')
   :markdown
-    ### The Verification Form
+    ## The Verification Form
 
     This page actually has two forms, but we'll focus on the first one first. It has only a single field for the verification code, which we'll submit to the server for validation.
 
 .step(data-title='Verifying the Code: Controller', data-file='app/controllers/users_controller.rb', data-highlight='37-56')
   :markdown
-    ### Verifying the Code: Controller
+    ## Verifying the Code: Controller
 
     This controller function handles the form submission. It needs to:
 
@@ -27,7 +27,7 @@
     * Verify the code that was entered by the user
     * If the code entered was valid, flip a boolean flag on the user model to indicate the account was verified
 
-    ### Verifying the Code
+    ## Verifying the Code
 
     Authy provides us with a `verify` method that allows us to pass a user id, a token and a callback function if we'd like. In this case we just need to check that the API request was successful and if so set `user.verified` to true. 
 
@@ -36,7 +36,7 @@
 
 .step(data-title='Re-sending The Code', data-file='app/controllers/users_controller.rb', data-highlight='58-63')
   :markdown
-    ### Re-sending the Code
+    ## Re-sending the Code
 
     Since the form for re-sending the code is one line (see `show_verify.html.erb`) we're going to skip that for this tutorial. Let's just look at the controller function.
 
